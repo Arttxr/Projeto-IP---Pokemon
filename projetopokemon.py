@@ -3,8 +3,9 @@ import random
 with open("pokemons.txt", "r", encoding="utf-8") as arquivo:
     pokemons = [p.strip().replace('"', '') for p in arquivo.read().split(',')]
     
-    numeros = list(range(1,152))
+numeros = list(range(1,152))
 
+pc = []
 with open("tipos.txt", "r", encoding="utf-8") as arquivo:
     tipos = arquivo.read().split('\n')
 
@@ -26,6 +27,8 @@ def registrarPokemon(pokemons, tipos):
     with open("pokedex.txt", "w", encoding="utf-8") as arquivo:
         arquivo.write(",".join(pokedex))
 
+    status = (f'pokemon: {pokemons[indice]} | tipo: {tipos[indice]} lvl:{random.randint(1, 100)}')
+    pc.append(status)
 def pesquisarNaPokedex(pokedex):
     pokemonApesquisar = input('Qual nome ou número do Pokemon que você quer encontrar na pokedex? (Ex: #2 // Ivysaur)').strip().lower()
     for pokemon in pokedex:
