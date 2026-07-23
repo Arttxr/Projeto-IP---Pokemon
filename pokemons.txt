@@ -1,4 +1,4 @@
-pokemons = [
+
     "Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon",
     "Charizard", "Squirtle", "Wartortle", "Blastoise", "Caterpie",
     "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill",
@@ -30,4 +30,3 @@ pokemons = [
     "Kabutops", "Aerodactyl", "Snorlax", "Articuno", "Zapdos",
     "Moltres", "Dratini", "Dragonair", "Dragonite", "Mewtwo",
     "Mew"
-]
