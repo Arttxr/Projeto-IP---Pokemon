@@ -5,12 +5,29 @@ with open("pokemons.txt", "r", encoding="utf-8") as arquivo:
     
 numeros = list(range(1,152))
 
-pc = []
+with open("pc.txt", "r", encoding="utf-8") as arquivo:
+    pc = arquivo.read().splitlines()
+
 with open("tipos.txt", "r", encoding="utf-8") as arquivo:
     tipos = arquivo.read().split('\n')
 
 with open("pokedex.txt", "r", encoding="utf-8") as arquivo:
     pokedex = arquivo.read().split(',')
+
+def iniciarUsuario():
+    print("=" * 40)
+    print("        BEM-VINDO À POKÉDEX")
+    print("=" * 40)
+
+    nome = input("Digite o nome do treinador: ").strip()
+
+    if nome == "":
+        nome = "Treinador"
+
+    print(f"\nOlá, {nome}!")
+    print("Boa sorte na sua jornada Pokémon!")
+
+    return nome
 
 #funçoes da pokedex!
 def registrarPokemon(pokemons, tipos):
@@ -29,6 +46,9 @@ def registrarPokemon(pokemons, tipos):
 
     status = (f'pokemon: {pokemons[indice]} | tipo: {tipos[indice]} lvl:{random.randint(1, 100)}')
     pc.append(status)
+    with open("pc.txt", "a", encoding="utf-8") as arquivo:
+        arquivo.write(status + "\n")
+
 def pesquisarNaPokedex(pokedex):
     pokemonApesquisar = input('Qual nome ou número do Pokemon que você quer encontrar na pokedex? (Ex: #2 // Ivysaur)').strip().lower()
     for pokemon in pokedex:
@@ -42,3 +62,9 @@ def pesquisarNaPokedex(pokedex):
         
     print ("Pokémon não registrado ou nome digitado errado.")
 
+    #funções para o pc 
+    
+def mostrarPC(pc):
+    print("Pokémons no PC:")
+    for pokemon in pc:
+        print(pokemon)
