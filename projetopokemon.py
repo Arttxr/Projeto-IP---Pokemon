@@ -41,7 +41,7 @@ def iniciarUsuario():
 
 #funçoes da pokedex!
 def registrarPokemon(pokemons, tipos): #gera um pokemon aleatorio da região de Kanto para ser capturado
-    numeroTirado = random.randint(1, 152)
+    numeroTirado = random.randint(1,152)
     indice = numeroTirado - 1
     print ('='*20)
     print (f'Parabéns, você capturou um(a) {pokemons[indice]}')
